@@ -1,6 +1,5 @@
 # WhatsappAutomation
-Whatsapp Web Automation Without saved contacts
-Script automatically sends messages via WhatsApp Web using the contact data and message data in the excel sheet when it is run.
+Script automatically sends messages via WhatsApp Web without saved contacts using the contact data and message data in the excel sheet when it is run.
 
 ### Requirements
 You must install the packages in the requirements.txt file to run script. You can install the required packages one by one 
