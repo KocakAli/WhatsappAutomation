@@ -10,24 +10,21 @@ from selenium.webdriver.common.keys import Keys
 
 excel_data = pandas.read_excel('data.xlsx', sheet_name='data')
 
-count = 0
+
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://web.whatsapp.com')
 input("Qr kod ile giriş yaptıktan sonra devam etmek için ENTER tuşuna basın.")
 for column in excel_data['Contact'].tolist():
     try:
-        url = 'https://web.whatsapp.com/send?phone=' + str(excel_data['Contact'][count]) + '&text=' + excel_data['Message'][0]
-        sent = False
+        url = 'https://web.whatsapp.com/send?phone=' + str(excel_data['Contact'][count]) + '&text=' + excel_data['Message'][0]  
         driver.get(url)
         xpath_val = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]'
         wait = WebDriverWait(driver, 10)
         sleep(2)
         wait.until(EC.presence_of_element_located((By.XPATH, xpath_val))).send_keys(Keys.ENTER)
-        sent = True
         sleep(5)
         print('Mesaj gönderildi: ' + str(excel_data['Contact'][count]))
-        count = count + 1
     except Exception as e:
         print('Mesaj gönderilemedi: ' + str(excel_data['Contact'][count]) + str(e))
 driver.quit()
