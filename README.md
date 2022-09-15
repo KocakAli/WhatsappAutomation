@@ -1,5 +1,5 @@
 # WhatsappAutomation
-Script automatically sends messages via WhatsApp Web without saved contacts using the contact data and message data in the excel sheet when it is run. This app may not work on new version of Google Chrome. If a problem occurs or script does not run properly just contact me.
+Script automatically sends messages via WhatsApp Web without saved contacts using the contact data and message data in the excel sheet when it is run.If a problem occurs or script does not run properly just contact me.
 
 ### Requirements and Install
 
